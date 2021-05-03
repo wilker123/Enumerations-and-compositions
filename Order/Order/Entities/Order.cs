@@ -9,7 +9,6 @@ namespace Order.Entities
 {
     class Order
     {
-        OrderItem item;
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
         public List<Client> Client = new List<Client>();
