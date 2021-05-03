@@ -9,6 +9,7 @@ namespace Order.Entities
 {
     class Order
     {
+        OrderItem item;
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
         public List<Client> Client = new List<Client>();
@@ -20,6 +21,26 @@ namespace Order.Entities
         {
             Moment = moment;
             Status = Status;
+        }
+
+        public void AddItem(OrderItem item)
+        {
+            Items.Add(item);
+        }
+
+        public void RemoveItem(OrderItem item)
+        {
+            Items.Remove(item);
+        }
+
+        public double Total()
+        {
+            double total = 0.0;
+            foreach (OrderItem i in Items)
+            {
+                total += i.Price;
+            }
+            return total;
         }
 
     }

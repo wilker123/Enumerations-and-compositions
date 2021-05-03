@@ -21,5 +21,11 @@ namespace Order.Entities
             Product = product;
         }
 
+        public double SubTotal()
+        {
+            return Price = Quantity * Product.Price;
+        }
+    
+
     }
 }
