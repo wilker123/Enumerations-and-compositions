@@ -1,25 +1,26 @@
-﻿using Order.Entities.Enums;
+﻿using OrderProject.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Entities
+namespace OrderProject.Entities
 {
     class Order
     {
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
-        public List<Client> Client = new List<Client>();
+        public Client Client { get; set; }
         public List<OrderItem> Items = new List<OrderItem>();
 
         public Order() { }
 
-        public Order(DateTime moment, OrderStatus status)
+        public Order(DateTime moment, OrderStatus status, Client client)
         {
             Moment = moment;
             Status = Status;
+            Client = client;
         }
 
         public void AddItem(OrderItem item)
@@ -37,10 +38,9 @@ namespace Order.Entities
             double total = 0.0;
             foreach (OrderItem i in Items)
             {
-                total += i.Price;
+                total += i.SubTotal();
             }
             return total;
         }
-
     }
 }

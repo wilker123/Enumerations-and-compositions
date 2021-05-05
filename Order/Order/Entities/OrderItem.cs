@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Entities
+namespace OrderProject.Entities
 {
     class OrderItem
     {
@@ -14,18 +14,19 @@ namespace Order.Entities
 
         public OrderItem() { }
 
-        public OrderItem(int quantity, double price, Product product)
+        public OrderItem(int quantity,double price, Product product)
         {
             Quantity = quantity;
-            Price = price;
             Product = product;
+            Price = price;
         }
 
         public double SubTotal()
         {
-            return Price = Quantity * Product.Price;
+            double subTotal = Quantity * Price;
+            return  subTotal;
         }
     
-
+        
     }
 }

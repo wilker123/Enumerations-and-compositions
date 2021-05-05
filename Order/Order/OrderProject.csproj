@@ -7,7 +7,7 @@
     <ProjectGuid>{A3A86CB2-BE73-4931-85E0-D83BC106293D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Order</RootNamespace>
+    <RootNamespace>OrderProject</RootNamespace>
     <AssemblyName>Order</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
