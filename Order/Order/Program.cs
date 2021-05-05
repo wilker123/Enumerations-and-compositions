@@ -41,18 +41,27 @@ namespace OrderProject
             int n = int.Parse(Console.ReadLine());
           
             for(int i = 1; i <= n; i++){
+
                 Console.WriteLine("Enter #" +i+" item data:");
                 Console.Write("Product name: ");
                 string nameProduct = Console.ReadLine();
+
                 Console.Write("Product price: ");
                 double priceProduct = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                Console.Write("Quantity");
+                
+                Console.Write("Quantity: ");
                 int quantity = int.Parse(Console.ReadLine());
 
                 Product product = new Product(nameProduct, priceProduct);
+                
                 OrderItem item = new OrderItem(quantity, priceProduct,product);
+                
                 order.AddItem(item);
             }
+            
+            Console.WriteLine("\nOrder sumary:\n");
+            Console.WriteLine("\nTotal: " + order);
+
         }
     }
 }
